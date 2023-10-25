@@ -1,6 +1,6 @@
 from art import logo
 import random as r
-import replit as rep
+import os
 def start_game():
     cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
     def deal_card():
@@ -41,5 +41,28 @@ def start_game():
                 user_cards.append(deal_card())
             else:
                 game_over = True
-        
-            
+    while computer_score != 0 and computer_score < 17:
+        computer_cards.append(deal_card())
+        computer_score = calculate_score(computer_cards)
+    print(f'Your final hand: {user_cards}\nFinal Score: {user_score}')
+    print(f'Computer final hand: {computer_cards}\nFinal Score: {computer_score}')
+    print(compare(user_score,computer_score))
+def compare(user_score,computer_score):
+    if user_score == computer_score:
+        return f'Both have a score of {user_score}. It\'s a draw!'
+    elif computer_score == 0:
+        return 'You lose, computer has a blackjack!'
+    elif user_score == 0:
+        return 'Congratulations! You got a blackjack!'
+    elif user_score > 21:
+        return 'Sorry you busted!Lose....'
+    elif user_score>computer_score:
+        return 'Congrats! You win this round.'
+    else:
+        return 'Sorry... Computer wins this round.'
+restart = 'y'
+while restart == 'y':
+    print(logo)
+    start_game()
+    restart = input('Do you want to play again? "y" or "n": ')
+    os.system('clear')           
