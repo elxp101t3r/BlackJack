@@ -56,10 +56,13 @@ def compare(user_score,computer_score):
         return 'Congratulations! You got a blackjack!'
     elif user_score > 21:
         return 'Sorry you busted!Lose....'
+    elif computer_score > 21:
+        return 'Congratulations! You win because the computer busted.'
     elif user_score>computer_score:
         return 'Congrats! You win this round.'
-    else:
+    elif computer_score>user_score:
         return 'Sorry... Computer wins this round.'
+    
 restart = 'y'
 while restart == 'y':
     print(logo)
