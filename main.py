@@ -1,8 +1,6 @@
 from art import logo
 import random as r
 import replit as rep
-
-# print(logo)
 def start_game():
     cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
     def deal_card():
