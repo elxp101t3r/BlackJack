@@ -61,8 +61,7 @@ def compare(user_score,computer_score):
     elif user_score>computer_score:
         return 'Congrats! You win this round.'
     elif computer_score>user_score:
-        return 'Sorry... Computer wins this round.'
-    
+        return 'Sorry... Computer wins this round.'   
 restart = 'y'
 while restart == 'y':
     print(logo)
